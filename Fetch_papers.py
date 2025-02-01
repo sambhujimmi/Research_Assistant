@@ -26,7 +26,8 @@ def fetch_arxiv_papers(query, max_results=5):
             "title": entry.find("{http://www.w3.org/2005/Atom}title").text,
             "summary": entry.find("{http://www.w3.org/2005/Atom}summary").text,
             "link": entry.find("{http://www.w3.org/2005/Atom}id").text,
-            "published": entry.find("{http://www.w3.org/2005/Atom}published").text
+            "published": entry.find("{http://www.w3.org/2005/Atom}published").text,
+            "authors": [author.find("{http://www.w3.org/2005/Atom}name").text for author in entry.findall("{http://www.w3.org/2005/Atom}author")]
         })
 
     return papers
