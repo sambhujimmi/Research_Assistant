@@ -1,7 +1,7 @@
 import openai
 import os
 
-# Set OpenAI API Key
+
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def summarize_paper(abstract):
