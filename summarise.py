@@ -13,7 +13,7 @@ def summarize_paper(abstract):
             {"role": "system", "content": "You are an AI assistant that summarizes research paper abstracts."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=150
+        max_tokens=100
     )
 
     return response.choices[0].message.content.strip()
