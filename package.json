@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "deploy": "^1.0.3",
+    "heurist": "^0.0.43",
+    "login": "^0.8.0"
+  }
+}

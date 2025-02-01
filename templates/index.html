@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .paper {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .paper h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .paper p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .paper a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .paper a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Research Assistant</h1>
+
+        <form method="POST">
+            <input type="text" name="query" placeholder="Enter a research topic..." required value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if summaries %}
+            <div class="results">
+                <h2>Search Results for: "{{ query }}"</h2>
+                {% for paper in summaries %}
+                <div class="paper">
+                    <h3><a href="{{ paper.link }}" target="_blank">{{ paper.title }}</a></h3>
+                    <p>{{ paper.summary }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
