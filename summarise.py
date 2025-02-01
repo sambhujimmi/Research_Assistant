@@ -1,15 +1,19 @@
 import openai
+import os
 
 # Set OpenAI API Key
-openai.api_key = "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"
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def summarize_paper(abstract):
     prompt = f"Summarize the following research paper abstract:\n\n{abstract}"
 
-    response = openai.Completion.create(
-        engine="gpt-4",
-        prompt=prompt,
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": "You are an AI assistant that summarizes research paper abstracts."},
+            {"role": "user", "content": prompt}
+        ],
         max_tokens=150
     )
 
-    return response.choices[0].text.strip()
+    return response.choices[0].message.content.strip()
