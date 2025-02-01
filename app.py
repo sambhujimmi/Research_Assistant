@@ -15,7 +15,7 @@ def home():
         
         if papers:
             summary_results = [
-                {"title": paper["title"], "summary": paper["summary"], "link": paper["link"]}
+                {"title": paper["title"], "summary": summarize_paper(paper["summary"]), "link": paper["link"]}
                 for paper in papers
             ]
         else:
