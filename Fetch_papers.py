@@ -11,5 +11,6 @@ def fetch_arxiv_papers(query, max_results=5):
     }
     response = requests.get(base_url, params=params)
     if response.status_code == 200:
+        print(response.text)
         return response.text
     return None
