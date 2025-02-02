@@ -16,8 +16,8 @@ This project is a **smart research assistant** that helps users **search, summar
 ## **🔧 Installation**
 ### **1⃣ Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/research-assistant.git
-cd research-assistant
+git clone https://github.com/sambhujimmi/Research_Assistant.git
+cd Research_Assistant
 ```
 
 ### **2⃣ Create a Virtual Environment**
@@ -51,7 +51,7 @@ export ARXIV_API_URL="http://export.arxiv.org/api/query?"
 ```bash
 python app.py
 ```
-👉 The application will run on `http://127.0.0.1:5000/`.
+ℹ️ The application will run on `http://127.0.0.1:5000/`.
 
 ### **2⃣ Search for Research Papers**
 - Open your browser and go to `http://127.0.0.1:5000/`.  
@@ -67,9 +67,9 @@ python app.py
 ---
 
 ## **🌟 Future Enhancements**
-👉 **PDF Export** – Allow users to download research summaries as PDFs.  
-👉 **Bookmarking** – Save important papers for later reference.  
-👉 **Collaborative Research** – Share insights with others in real-time.  
+🔸 **PDF Export** – Allow users to download research summaries as PDFs.  
+🔸 **Bookmarking** – Save important papers for later reference.  
+🔸 **Collaborative Research** – Share insights with others in real-time.  
 
 ---
 
