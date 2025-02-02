@@ -25,8 +25,19 @@
       </div>
 
       <form method="POST" class="search-form">
+        <div class="sort-container">
+          <label for="sort" class="sort-label">Sort by:</label>
+          <select id="sort" name="sort">
+              <option value="relevance" {% if sort == "relevance" %}selected{% endif %}>Relevance</option>
+              <option value="lastUpdatedDate" {% if sort == "lastUpdatedDate" %}selected{% endif %}>Last Updated</option>
+              <option value="submittedDate" {% if sort == "submittedDate" %}selected{% endif %}>Submitted Date</option>
+          </select>
+      </div>
+      
+
         <input
           type="text"
+          id="query"
           name="query"
           class="search-input"
           placeholder="Enter a research topic..."
@@ -67,7 +78,12 @@
           <div class="summary"></div>
         </div>
         {% endfor %}
+        
       </div>
+      <button id="load-more" data-start="{{ papers|length }}" data-sort="{{ sort }}" style="display: block;">
+        More
+    </button>
+    
       {% endif %}
     </div>
 
