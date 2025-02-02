@@ -21,7 +21,7 @@ html.dark {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-primary);
@@ -74,6 +74,49 @@ h1 {
   gap: 0.75rem;
 }
 
+/* 🔹 Sort Dropdown Styling */
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.sort-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+#sort {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none; /* Removes default browser styling */
+  outline: none;
+}
+
+#sort:hover,
+#sort:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.sort-container select {
+  padding-right: 2rem;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%234f46e5'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E"); Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+/* 🔹 SEARCH INPUT & BUTTON */
 .search-form {
   max-width: 700px;
   margin: 2rem auto;
@@ -83,7 +126,7 @@ h1 {
 
 .search-input {
   flex: 1;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   font-size: 1rem;
   border: 2px solid var(--border-color);
   border-radius: 0.75rem;
@@ -117,6 +160,7 @@ h1 {
   transform: translateY(-1px);
 }
 
+/* 🔹 PAPER RESULTS */
 .results-header {
   margin: 2rem 0 1.5rem;
   font-size: 1.5rem;
@@ -152,6 +196,7 @@ h1 {
   color: var(--accent-hover);
 }
 
+/* 🔹 PAPER INFO */
 .paper-info {
   font-size: 0.875rem;
   color: var(--text-secondary);
@@ -166,6 +211,7 @@ h1 {
   gap: 0.5rem;
 }
 
+/* 🔹 SUMMARY BUTTON */
 .summarize-btn {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
@@ -183,16 +229,26 @@ h1 {
   color: white;
 }
 
-.summary {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: var(--bg-primary);
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  display: none;
+/* 🔹 "MORE" BUTTON */
+#load-more {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+#load-more:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* 🔹 RESPONSIVE STYLING */
 @media (max-width: 640px) {
   .container {
     padding: 1rem;
@@ -204,6 +260,10 @@ h1 {
   }
 
   .search-button {
+    width: 100%;
+  }
+
+  #sort {
     width: 100%;
   }
 }
