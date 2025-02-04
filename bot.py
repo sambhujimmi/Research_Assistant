@@ -1,4 +1,4 @@
-from telegram import Update
+from interfaces.telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 from Fetch_papers import fetch_arxiv_papers
 from summarise import summarize_paper

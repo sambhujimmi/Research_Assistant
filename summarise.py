@@ -1,8 +1,13 @@
 import openai
 import os
+import dotenv
 
+os.environ.clear()
+dotenv.load_dotenv()
 
-client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+client = openai.OpenAI(OPENAI_API_KEY)
 
 def summarize_paper(abstract):
     prompt = f"Summarize the following research paper abstract:\n\n{abstract}"
