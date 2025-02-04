@@ -33,12 +33,7 @@ pip install -r requirements.txt
 ```
 
 ### **4⃣ Set Up Environment Variables**
-Create a `.env` file and add your **API keys**:
-```
-OPENAI_API_KEY="your-openai-api-key"
-ARXIV_API_URL="http://export.arxiv.org/api/query?"
-```
-Alternatively, export them in the terminal:
+Export your **API keys** in the terminal:
 ```bash
 export OPENAI_API_KEY="your-openai-api-key"
 export ARXIV_API_URL="http://export.arxiv.org/api/query?"
