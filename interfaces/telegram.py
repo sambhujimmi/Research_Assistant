@@ -1,4 +1,4 @@
-from interfaces.telegram import Update
+from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 import logging
 import os
@@ -64,7 +64,7 @@ class TelegramAgent(CoreAgent):
         self.app.add_handler(CommandHandler("get_id", self.get_id))
 
     async def start(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        await update.message.reply_text("Hello! I’m your AI-powered <b>Research Assistant</b>, here to help you find, summarize, and analyze research papers from arXiv. You can interact with me by sending a research topic, and I'll fetch relevant papers for you!", parse_mode="html")
+        await update.message.reply_text("Hello! I'm your AI-powered <b>Research Assistant</b>, here to help you find, summarize, and analyze research papers from arXiv. You can interact with me by sending a research topic, and I'll fetch relevant papers for you!", parse_mode="html")
         
     async def get_id(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_id = update.message.chat_id
