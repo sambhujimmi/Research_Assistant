@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from Fetch_papers import fetch_arxiv_papers
+from fetch_papers import fetch_arxiv_papers
 from summarise import summarize_paper
 
 app = Flask(__name__)
@@ -42,4 +42,4 @@ def load_more():
     return jsonify(new_papers)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

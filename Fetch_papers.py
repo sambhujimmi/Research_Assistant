@@ -1,9 +1,15 @@
 import requests
 import xml.etree.ElementTree as ET
+import os
+import dotenv
+
+os.environ.clear()
+dotenv.load_dotenv()
+
+ARXIV_API_URL = os.getenv("ARXIV_API_URL")
 
 def fetch_arxiv_papers(query, start=0, max_results=5, sortby="relevance", sortorder="descending"):
     """Fetches and parses research papers from arXiv API."""
-    base_url = "http://export.arxiv.org/api/query?"
     # query_url = f"{base_url}search_query={query}&start=0&max_results={max_results}&sortBy=lastUpdatedDate&sortOrder=descending"
     params = {
         "search_query": query,
@@ -13,7 +19,7 @@ def fetch_arxiv_papers(query, start=0, max_results=5, sortby="relevance", sortor
         "sortOrder": sortorder
     }
 
-    response = requests.get(base_url, params=params)
+    response = requests.get(ARXIV_API_URL, params=params)
 
     if response.status_code != 200:
         return None  # Return None if the request fails
